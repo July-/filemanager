@@ -1,0 +1,23 @@
+<div class="modal-header">
+	<h3 class="modal-title" id="modal-title">New File</h3>
+</div>
+<div class="modal-body" id="modal-body">
+
+	<form novalidate name="newfile_form" id="newfile_form">
+	<div class="form-group">
+		<label for="file_name">File Name</label>
+		<input type="text" class="form-control" id="file_name" ng-model="newFileCtrl.fileData.name" required />
+	</div>
+		<div class="form-group">
+			<label for="new_code">File Contents (optional)</label>
+			<textarea class="form-control code-textarea" id="new_code" ng-model="newFileCtrl.fileData.contents">
+			</textarea>
+		</div>
+	</form>
+	 
+</div>
+
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="newFileCtrl.ok()" ng-disabled="newfile_form.$invalid">Save</button>
+	<button class="btn btn-warning" type="button" ng-click="newFileCtrl.cancel()">Cancel</button>
+</div>

@@ -1,0 +1,10 @@
+<div class="modal-header">
+	<h3 class="modal-title" id="modal-title">{{modalCtrl.item}}</h3>
+</div>
+<div class="modal-body" id="modal-body">
+	<img ng-src="php/image.php?image={{modalCtrl.item}}&amp;token={{modalCtrl.accessToken}}" class="popup-viewer-img" />
+	
+</div>
+<div class="modal-footer">
+	<button class="btn btn-warning" type="button" ng-click="modalCtrl.cancel()">Close</button>
+</div>

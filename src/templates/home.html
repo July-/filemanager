@@ -1,0 +1,33 @@
+<p>&nbsp;</p>
+<ul class="breadcrumb">
+			<li><a ui-sref="folder({folder: ''})">Home</a></li>
+			<li ng-show="filesctrl.filesList.breadcrumb[0].link.length" ng-repeat="breadcrumb in filesctrl.filesList.breadcrumb"><a ui-sref="folder({folder: breadcrumb.link})">{{breadcrumb.header}}</a></li>
+		</ul>
+		<h2 id="fileslist">Files List</h2>
+		<p>Elements count: {{filesctrl.filesList.list.length}}. 
+			<div sticky sticky-class="sticky" class="buttons-panel clearfix">
+				<div class="pull-left">
+					<div class="btn-group">
+						<button class="btn btn-info" ng-click="filesctrl.checkAll()">Select All</button>
+						<button class="btn btn-primary" ng-click="filesctrl.uncheckAll()">Drop Selection</button>
+					</div>
+				</div>
+				<div class="pull-right">
+					<div class="btn-group">
+					  <button type="button" class="btn btn-primary" ng-click="filesctrl.openZipModal()">Zip selected</button>
+					  <button type="button" class="btn btn-primary" ng-click="filesctrl.openUploadModal()">Upload</button>
+					  <button type="button" class="btn btn-info" ng-click="filesctrl.openNewFileModal()">New File</button>
+					  <button type="button" class="btn btn-info" ng-click="filesctrl.openNewFolderModal()">New Folder</button>
+					  <button type="button" class="btn btn-warning" ng-click="filesctrl.copySelected()">Copy selected</button>
+					  <button type="button" class="btn btn-warning" ng-click="filesctrl.pasteFiles()">Paste</button>
+					  <button type="button" class="btn btn-danger" ng-click="filesctrl.deleteSelectedFiles()">Delete selected</button>
+					</div>
+				</div>
+			</div>
+		</p>
+
+<div class="files-container">
+	<file ng-repeat="item in filesctrl.filesList.list" item="item" rename="filesctrl.renameFile(file, newName)" unzip="filesctrl.openUnzipModal(item)" token="filesctrl.token"></file>
+</div>
+
+<ui-view></ui-view>

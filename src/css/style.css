@@ -1,0 +1,206 @@
+a {
+	cursor: pointer;
+}
+
+label.fullwidth-label {
+	display: block;
+	overflow: hidden;
+	margin: 0;
+	border: solid 1px gray;
+	border-bottom: none;
+	line-height: 35px;
+}
+
+file:first-child label.fullwidth-label {
+	border-radius: 10px 10px 0 0;
+}
+
+file:last-child label.fullwidth-label {
+	border-radius: 0 0 10px 10px;
+	border-bottom: solid 1px gray;
+}
+
+label.fullwidth-label:hover {
+	background: #f5f5f5;
+}
+
+.fullwidth-label input[type=checkbox] {
+	float: left;
+	line-height: 20px;
+	margin-top: 17px;
+    margin-right: 10px;
+	margin-left: 10px;
+}
+
+a.file {
+	display: inline-block;
+	padding-left: 50px;
+	background: url(../img/doc.png) no-repeat left center;
+	background-size: 35px auto;
+}
+
+a.directory {
+	display: inline-block;
+	padding-left: 50px;
+	background: url(../img/folder.png) no-repeat left center;
+	background-size: 35px auto;
+}
+
+.buttons-row {
+	margin: 20px 0;
+}
+
+body {
+	background-color: #f1f1f1;
+}
+
+.container {
+	background: white;
+}
+
+.after-checkbox {
+	padding: 5px;
+}
+
+input[type=checkbox]:checked+.after-checkbox {
+	background: #d4f1d4;
+}
+
+.site-header {
+    background: black;
+    color: white;
+    overflow: hidden;
+    margin: 0 -15px;
+    padding: 0 15px 10px;
+}
+
+.label {
+   font-size: 100%; 
+}
+
+.files-container {
+	padding-bottom: 30px;
+}
+
+/* Fix for Bootstrap 3 with Angular UI Bootstrap */
+
+.modal { 
+	display: block;
+}
+
+.alert {
+	max-height: 300px;
+	overflow: auto;
+}
+
+.buttons-panel {
+	background: white;
+	padding: 5px;
+}
+
+.buttons-panel.sticky {
+	border: 1px solid gray;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+}
+
+.popup-viewer-img {
+	max-width: 100%;
+	border: solid 1px #e5e5e5;
+	padding: 3px;
+}
+
+.btn-round {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.btn-round.btn-lg {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-round.btn-sm {
+    width: 34px;
+    height: 34px;
+}
+
+.btn-round.btn-xs {
+    width: 24px;
+    height: 24px;
+}
+
+textarea.code-textarea {
+	height: 360px;
+    background: black;
+    color: white;
+}
+
+div[ng-transclude] {
+	white-space: pre-wrap;
+}
+
+ .my-drop-zone { 
+	border: dotted 3px lightgray;     text-align: center;
+    font-size: 20px;
+    padding: 30px 20px;
+    margin-bottom: 5px;
+}
+
+ .nv-file-over { border: dotted 3px green;}
+
+ .manager-file .glyphicon {
+	 margin-right: 5px;
+ }
+ 
+ a.manager-file:hover {
+	 text-decoration: none;
+	 color: #589dd8;
+ }
+ 
+ .editable-wrap .editable-error {
+	 display: inline-block;
+    margin: 0 0 0 5px;
+ }
+ 
+.site-header .navbar-nav {
+    margin-top: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.site-header .navbar-inverse {
+	background: #2c689d;
+}
+
+.navbar-inverse a {
+    color: white;
+}
+
+.nav.navbar-inverse>li>a:focus, .nav.navbar-inverse>li>a:hover {
+    background: #49b8da;
+}
+
+.ng-submitted .ng-invalid-required {
+	border: solid 1px red;
+}
+
+.ng-submitted .ng-invalid-required + span {
+	color: red;
+}
+
+.alerts-container.ng-scope {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+.upload-message {
+	padding: 5px;
+  border: solid 1px #cccccc;
+  margin-top: 10px;
+  max-height: 150px;
+  overflow: auto; 
+	white-space: pre-line;
+}

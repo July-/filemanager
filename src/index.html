@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>File Manager</title>
+	<link rel="stylesheet" href="css/styles.css">
+	
+	<script src="js/script.js"></script>
+	
+</head>
+<body ng-app="mainApp">
+	<div class="container">
+		
+		<div class="menu clearfix site-header" id="top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<h1>File Manager</h1>
+				</div>
+				<div ng-controller="LoginController as loginCtrl">
+					<ul class="nav navbar-nav navbar-right navbar-inverse" ng-if="loginCtrl.state!='login'">
+						<li><a href="#" ng-click="loginCtrl.logout()"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div ng-controller="AlertController as alertCtrl" class="alerts-container">
+			<div uib-alert ng-repeat="alert in alertCtrl.alerts" ng-class="'alert-' + (alert.type || 'warning')" close="alertCtrl.closeAlert($index)" dismiss-on-timeout="10000">{{alert.msg}}
+			</div>
+		</div>
+		
+		<ui-view></ui-view>
+		
+	</div>
+	
+	
+</body>
+</html>

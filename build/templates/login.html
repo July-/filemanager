@@ -1,0 +1,15 @@
+<div class="for-login" ng-controller="LoginController as loginCtrl">
+<h2>Log In</h2>
+<form novalidate name="loginForm" id="loginForm">
+  <div class="form-group">
+    <label for="user">User Name:</label>
+    <input type="text" class="form-control" id="user" ng-model="loginCtrl.user" required>
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" ng-model="loginCtrl.password" required>
+  </div>
+  <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-default" ng-click="loginCtrl.login(loginCtrl.user, loginCtrl.password)">Submit</button>
+</form>
+<br /><br /><br />
+</div>

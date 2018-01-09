@@ -1,0 +1,18 @@
+<div class="modal-header">
+	<h3 class="modal-title" id="modal-title">Unzip Archive {{unzipCtrl.archiveName}}</h3>
+</div>
+<div class="modal-body" id="modal-body">
+
+	<form novalidate name="unzip_form" id="unzip_form">
+		<div class="form-group">
+			<label for="folder_name">Folder Name (don't edit to unzip in current folder. If folder doesn't exist, it will be created.)</label>
+			<input type="text" class="form-control" id="folder_name" ng-model="unzipCtrl.currentPath" />
+		</div>
+	</form>
+	 
+</div>
+
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="unzipCtrl.ok()" >Unzip</button>
+	<button class="btn btn-warning" type="button" ng-click="unzipCtrl.cancel()">Cancel</button>
+</div>

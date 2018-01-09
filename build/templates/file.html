@@ -1,0 +1,31 @@
+<label class="fullwidth-label">
+	<input type="checkbox" name="selected_files" ng-model="$ctrl.item.isChecked" />
+	<div class="after-checkbox">
+			
+		<a ng-click="$ctrl.action($ctrl.item)" uib-tooltip="Open" class="manager-file">
+		
+		
+			<span class="glyphicon glyphicon-folder-open" ng-show="$ctrl.item.type=='directory'"></span>
+			<span class="glyphicon glyphicon-picture" ng-show="$ctrl.item.extension=='jpg' || $ctrl.item.extension=='jpeg' || $ctrl.item.extension=='png' || $ctrl.item.extension=='gif'"></span>
+			<span class="glyphicon glyphicon-book" ng-show="$ctrl.item.extension=='zip'"></span>
+			<span class="glyphicon glyphicon-file" ng-show="$ctrl.item.extension!='zip' && $ctrl.item.type!='directory' && $ctrl.item.extension!='jpg' && $ctrl.item.extension!='jpeg' && $ctrl.item.extension!='png' && $ctrl.item.extension!='gif'"></span>
+			<span ng-hide="textBtnForm.$visible">{{ $ctrl.item.name || 'empty' }}</span>
+			
+		</a>
+		
+		<span ng-show="textBtnForm.$visible" editable-text="$ctrl.item.name" e-form="textBtnForm" onbeforesave="$ctrl.save($ctrl.item, $data); $event.preventDefault();">
+				{{ $ctrl.item.name || 'empty' }}
+		</span>
+		
+		 <button class="btn btn-default btn-xs btn-round" ng-click="textBtnForm.$show()" uib-tooltip="Rename" ng-hide="textBtnForm.$visible" style="margin-left: 10px;">
+			<span class="glyphicon glyphicon-pencil"></span>
+		</button>
+		
+		<button ng-show="$ctrl.item.extension=='zip'" class="btn btn-primary btn-xs btn-round" uib-tooltip="Unzip" style="margin-left: 10px;" ng-click="$ctrl.unzip({ item: $ctrl.item})"><span class="glyphicon glyphicon-export"></span></button>
+		
+		<a ng-href="{{$ctrl.downloadLink($ctrl.item)}}" download ng-show="$ctrl.item.type=='file'" class="btn btn-success btn-xs btn-round" uib-tooltip="Download {{$ctrl.item.name}}" style="margin-left: 10px;"><span class="glyphicon glyphicon-download-alt"></span></a>
+		
+		<span ng-show="$ctrl.item.size.toString().length" class="label label-info pull-right">Size: {{$ctrl.item.size | filesize}}</span>
+		
+	</div>
+</label>
